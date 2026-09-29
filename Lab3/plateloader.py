@@ -24,6 +24,8 @@ class PlateLoader:
         response=response_bytes.decode().strip()
         print(response)
 
+        return response
+
 if __name__ == "__main__":
     print("Quick PlateLoader testing")
     loader=PlateLoader()
