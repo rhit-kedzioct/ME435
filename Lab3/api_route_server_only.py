@@ -1,6 +1,10 @@
 import flask 
 app = flask.Flask(__name__)
 
+@app.get("/")
+def handle_naked_domain():
+    return flask.redirect("/api/hello/Chase Kedzior")
+
 @app.get("/api/hello/<name>")
 def hello_name(name):
     return f"Hello, {name}!"
