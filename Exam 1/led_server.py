@@ -11,7 +11,7 @@ arduino = led.LED()
 
 @app.route("/")
 def handle_naked_domain():
-    return "LED server is running. Try /api/led/on, /api/led/off, or /api/flash/3/1000"
+    return "Server is running"
 
 
 @app.get("/api/led/<command>")
@@ -42,6 +42,6 @@ if __name__ == "__main__":
     print("Running flask!")
     arduino.connect()
     try:
-        app.run(host="0.0.0.0", port=5000, use_reloader=False)
+        app.run(host="0.0.0.0", port=8080, use_reloader=False)
     finally:
         arduino.disconnect()
