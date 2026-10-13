@@ -1,29 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arduino LED Controller</title>
+    <title>Exam 1</title>
 </head>
 <body>
-    <h1>Arduino LED Controller</h1>
-    <p>Control the built-in LED on the Arduino.</p>
+    <h1>Exam 1</h1>
+    <div id="replyText">The reply will go here</div>
+    <hr>
 
-    <button onclick="ledOn()">LED ON</button>
-    <button onclick="ledOff()">LED OFF</button>
+    <button id="ledOn">LED On</button>
+    <button id="ledOff">LED Off</button>
+    <br><br>
 
-    <p>
-        <label for="flashes">Number of Flashes:</label>
-        <input type="number" id="flashes" value="3" min="1" step="1">
-    </p>
-    <p>
-        <label for="period">Period (milliseconds):</label>
-        <input type="number" id="period" value="1500" min="1" step="1">
-    </p>
-    <button onclick="flashLed()">FLASH</button>
+    <label>Number of Flashes:</label>
+    <input type="number" value="3" id="flashes">
+    <br><br>
 
-    <h3>Server Response:</h3>
-    <p id="response">No command sent yet.</p>
+    <label>Period (ms):</label>
+    <input type="number" value="1500" id="period">
+    <br><br>
+
+    <button id="flash">Flash</button>
 
     <script src="main.js"></script>
 </body>

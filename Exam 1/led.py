@@ -13,18 +13,15 @@ class LED:
         self.ser.reset_input_buffer()
 
     def disconnect(self):
-        if self.ser is not None and self.ser.is_open:
-            self.ser.close()
+        self.ser.close()
 
     def send_command(self, command):
         message_bytes = (command + "\n").encode()
         print(message_bytes)
         self.ser.write(message_bytes)
         response_bytes = self.ser.readline()
-        response = response_bytes.decode(errors="replace").strip()
+        response = response_bytes.decode().strip()
         print(response)
-        if not response:
-            raise TimeoutError("No response from Arduino")
         return response
 
 

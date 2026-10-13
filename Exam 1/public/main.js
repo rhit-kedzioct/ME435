@@ -1,47 +1,33 @@
+async function sendCommand(command) {
+    var response = await fetch(`/api/${command}`);
+    var replyText = await response.text();
+    console.log(replyText);
 
-function ledOn() {
-    fetch("/api/led/on")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("response").innerText = data;
-        })
-        .catch(error => {
-            document.getElementById("response").innerText = "Error: " + error;
-        });
-}
+    document.querySelector("#replyText").innerHTML = replyText;
 
-function ledOff() {
-    fetch("/api/led/off")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("response").innerText = data;
-        })
-        .catch(error => {
-            document.getElementById("response").innerText = "Error: " + error;
-        });
-}
-
-function flashLed() {
-    let flashes = document.getElementById("flashes").value;
-    let period = document.getElementById("period").value;
-
-    if (flashes <= 0 || period <= 0 || !Number.isInteger(Number(flashes)) || !Number.isInteger(Number(period))) {
-        document.getElementById("response").innerText = "Please enter positive whole numbers.";
-        return;
-    }
-
-    fetch("/api/flash/" + flashes + "/" + period)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("response").innerText = data;
-        })
-        .catch(error => {
-            document.getElementById("response").innerText = "Error: " + error;
-        });
+    return replyText;
 }
 
 function main() {
-    console.log("Arduino LED Web App Ready!");
+    console.log("Exam 1");
+
+    document.querySelector("#ledOn").onclick = () => {
+        console.log("LED On pressed!");
+        sendCommand("led/on");
+    };
+
+    document.querySelector("#ledOff").onclick = () => {
+        console.log("LED Off pressed!");
+        sendCommand("led/off");
+    };
+
+    document.querySelector("#flash").onclick = () => {
+        let flashes = document.querySelector("#flashes").value;
+        let period = document.querySelector("#period").value;
+
+        console.log(`FLASH ${flashes} ${period}`);
+        sendCommand(`flash/${flashes}/${period}`);
+    };
 }
 
 main();
