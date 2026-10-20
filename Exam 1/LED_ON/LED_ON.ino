@@ -55,11 +55,6 @@ void handleFlash(String params) {
   int flashes = flashesParam.toInt();
   int periodMs = periodParam.toInt();
 
-  if (flashes <= 0 || periodMs <= 0) {
-    Serial.println("Invalid flash parameters");
-    return;
-  }
-
   Serial.print("Flashes = ");
   Serial.print(flashes);
   Serial.print(" PeriodMs = ");
