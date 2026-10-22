@@ -47,7 +47,7 @@ def run_test_drive_system():
     # run_test_draw_polygon(robot)
 
 
-def run_test_go_stop(robot: Rosebot):
+def run_test_go_stop(robot: RoseBot):
     """
     Tests the   go    and   stop   methods of the DriveSystem class.
     """
@@ -77,7 +77,7 @@ def run_test_go_stop(robot: Rosebot):
         robot.drive_system.stop()
 
 
-def run_test_go_straight_for_seconds(robot: Rosebot):
+def run_test_go_straight_for_seconds(robot):
     """
     Tests the   go_straight_for_seconds   method of the DriveSystem class.
     """
@@ -100,7 +100,7 @@ def run_test_go_straight_for_seconds(robot: Rosebot):
         # -------------------------------------------------------------------------
 
 
-def run_test_go_straight_for_inches(robot: Rosebot):
+def run_test_go_straight_for_inches(robot):
     """
     Tests the   go_straight_for_inches   method of the DriveSystem class.
     """
@@ -124,7 +124,7 @@ def run_test_go_straight_for_inches(robot: Rosebot):
         # -------------------------------------------------------------------------
 
 
-def run_test_spin_in_place_for_seconds(robot: Rosebot):
+def run_test_spin_in_place_for_seconds(robot):
     """
     Tests the   spin_in_place_for_seconds   method of the DriveSystem class.
     """
@@ -147,7 +147,7 @@ def run_test_spin_in_place_for_seconds(robot: Rosebot):
         # -------------------------------------------------------------------------
 
 
-def run_test_spin_in_place_for_degrees(robot: Rosebot):
+def run_test_spin_in_place_for_degrees(robot):
     """
     Tests the   spin_in_place_for_degrees   method of the DriveSystem class.
     """
@@ -168,7 +168,7 @@ def run_test_spin_in_place_for_degrees(robot: Rosebot):
         # -------------------------------------------------------------------------
 
 
-def run_test_draw_polygon(robot: Rosebot):
+def run_test_draw_polygon(robot):
     """
     Uses the methods spin_in_place_for_degrees and go_straight_for_inches of the DriveSystem
      to create a small program. This program will ask the user for how many sides they
