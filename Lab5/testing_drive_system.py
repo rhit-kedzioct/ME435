@@ -47,7 +47,7 @@ def run_test_drive_system():
     # run_test_draw_polygon(robot)
 
 
-def run_test_go_stop(robot: Rosebot):
+def run_test_go_stop(robot):
     """
     Tests the   go    and   stop   methods of the DriveSystem class.
     """
